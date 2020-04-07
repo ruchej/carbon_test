@@ -1,0 +1,71 @@
+<!DOCTYPE html>{% load static %}
+<html lang="ru">
+  <head>
+    <link rel="stylesheet" href="{% static 'core/css/core.css' %}" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CarbonSoft test</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="block">
+        <table>
+          <thead>
+            <th>id</th>
+            <th>Дата</th>
+            <th>CPU, %</th>
+          </thead>
+          <tbody>
+            {% for i in obj %}
+            <tr>
+              <td>{{ i.id }}</td>
+              <td>{{ i.date }}</td>
+              <td>{{ i.cpu }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="block">
+        <table class="table_sort">
+          <thead>
+            <th>id</th>
+            <th>Дата</th>
+            <th>CPU, %</th>
+          </thead>
+          <tbody>
+            {% for i in obj %}
+            <tr>
+              <td>{{ i.id }}</td>
+              <td>{{ i.date }}</td>
+              <td>{{ i.cpu }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="block">
+        <table>
+          <thead>
+            <th>Записей</th>
+            <th>Мин. значение</th>
+            <th>Макс. значение</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>100</td>
+              <td>{{ cpu_min_100 }}</td>
+              <td>{{ cpu_max_100 }}</td>
+            </tr>
+            <tr>
+              <td>Всех</td>
+              <td>{{ cpu_min }}</td>
+              <td>{{ cpu_max }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="{% static 'core/js/core.js' %}"></script>
+  </body>
+</html>
