@@ -20,6 +20,7 @@ pip install django
 git clone https://github.com/Ruchey/carbon_test.git
 
 Перейти в папку cd carbon_test
+
 Запустить проект
 
 sh run.sh
